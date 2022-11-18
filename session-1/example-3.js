@@ -41,6 +41,7 @@ function ticketValidation(user, movie) {
 	const isAdult = user.age >= movie.minAge;
 	const worthiness = user.amount >= movie.ticketPrice;
 
+	// check negative case first
 	if (isAdult && !worthiness) {
 		return {
 			isValid: false,
@@ -49,6 +50,7 @@ function ticketValidation(user, movie) {
 		};
 	}
 
+	// check negative case first
 	if (!isAdult && worthiness) {
 		return {
 			isValid: false,
@@ -57,6 +59,7 @@ function ticketValidation(user, movie) {
 		};
 	}
 
+	// check negative case first
 	if (!isAdult && !worthiness) {
 		return {
 			isValid: false,
@@ -65,6 +68,7 @@ function ticketValidation(user, movie) {
 		};
 	}
 
+	// check positive case
 	return {
 		isValid: true,
 		name: user.name,
@@ -76,4 +80,6 @@ const check = ticketValidation(user, movie);
 
 if (check.isValid) {
 	console.log(`Selamat ${check.name}`);
+} else {
+	console.log(`Maaf ${check.name}, ${check.reason}`);
 }
