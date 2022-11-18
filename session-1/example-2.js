@@ -16,21 +16,31 @@ class Human {
 	benchpressPr;
 	squatPr;
 
-	constructor() {
-		this.name = "Dhafa";
-		this.deadliftPr = 60;
-		this.brenchpressPr = 30;
-		this.squatPr = 20;
+	// constructor argument dibuat object dengan menggunakan class, lalu di destructuring di dalam constructor
+	// contoh destructuring: const { name, deadliftPr, benchpressPr, squatPr } = human;
+	constructor({ name, deadliftPr, benchpressPr, squatPr }) {
+		this.name = name;
+		this.deadliftPr = deadliftPr;
+		this.brenchpressPr = benchpressPr;
+		this.squatPr = squatPr;
 	}
 
 	run() {
 		console.log(this.name + " sedang berlari");
 	}
 
-	walk() {}
+	walk() {
+		console.log(this.name + " sedang berjalan");
+	}
 }
 
-const manusia = new Human();
+const manusia = new Human({
+	name: "Dhafa",
+	deadliftPr: 60,
+	benchpressPr: 30,
+	squatPr: 20,
+});
+
 console.log("Name : " + manusia.name);
 console.log("Deadlift : " + manusia.deadliftPr);
 
@@ -45,15 +55,15 @@ const car = {
 	year: 2000,
 };
 
-// sebelum dimutasi
-console.log(car);
-
-car.name = "BMW";
-
 function getCar(car = {}) {
 	if (Object.keys(car).length === 0) throw Error("Car is required");
 	return car;
 }
+
+// sebelum dimutasi
+console.log(car);
+
+car.name = "BMW";
 
 const myCar = getCar(car);
 
