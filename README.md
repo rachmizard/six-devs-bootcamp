@@ -1,4 +1,3 @@
-# six-devs-bootcamp
-Javascript Bootcamp Assignment Review
+# Six Devs Bootcamp
 
 This repository contains explained use-case assignment for javascript fundamentals
