@@ -11,32 +11,7 @@ const movie = {
 	minAge: 13,
 };
 
-// function ticketValidation(user, movie) {
-// 	const isAdult = user.age >= movie.minAge;
-// 	const worthiness = user.amount >= movie.ticketPrice;
-
-// 	if (isAdult && worthiness) {
-// 		return console.log(
-// 			`Selamat ${user.name}, kamu berhasil membeli tiket ${movie.name} dengan harga ${movie.ticketPrice}`
-// 		);
-// 	}
-
-// 	if (!isAdult && !worthiness)
-// 		return console.log(
-// 			"Gagal membeli tiket karena emang ga layak dari segi apapun"
-// 		);
-
-// 	if (!isAdult)
-// 		return console.log("Gagal membeli tiket karena belum cukup umur");
-
-// 	if (!worthiness)
-// 		return console.log("Gagal membeli tiket karena uang kurang");
-// }
-
-// ticketValidation(user, movie);
-
-// WITH RETURN DATA TYPE CASE
-
+// WITH RETURN DATA TYPE CASE (BEST PRACTICE) & Isolate the logic
 function ticketValidation(user, movie) {
 	const isAdult = user.age >= movie.minAge;
 	const worthiness = user.amount >= movie.ticketPrice;
